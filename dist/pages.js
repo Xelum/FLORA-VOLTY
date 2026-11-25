@@ -1,5 +1,11 @@
 const form=document.querySelector('.lead');
-if(form){
+if(form && location.hostname==='xelum.github.io'){
+ const title=document.createElement('h3'); title.textContent='Parla con FLORA';
+ const intro=document.createElement('p');intro.textContent='Per disponibilità, preordini o una prova, contattaci direttamente.';
+ const group=document.createElement('div');group.className='channels';
+ for(const [label,url] of [['Scrivi su WhatsApp','https://wa.me/3907611762375'],['Invia un’email','mailto:preventivi@florambiente.it']]){const link=document.createElement('a');link.href=url;link.textContent=label;group.append(link)}
+ const block=document.createElement('div');block.className='draft';block.append(title,intro,group);form.replaceWith(block);
+}else if(form){
  const colors={hero:'Grigio grafite',bosco:'Verde bosco',perla:'Bianco perla'};
  const key=new URLSearchParams(location.search).get('tinta');
  const chosen=form.querySelector('.chosen');
