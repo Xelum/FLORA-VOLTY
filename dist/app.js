@@ -27,7 +27,7 @@ function sizeTrack(){
  topInset=(viewport?.offsetTop||0)+header.offsetHeight+(usable-panel.offsetHeight)/2;
  // Use a naturally scrolling, manually selectable palette when the full panel cannot fit.
  pin=!reduce.matches && panel.offsetHeight+16<=usable;
- step=Math.max(240,Math.round(visibleHeight*.57));
+ step=Math.max(360,Math.round(visibleHeight*.94));
  track.style.setProperty('--pin-top',topInset+'px');track.style.setProperty('--travel',(3*step)+'px');track.classList.toggle('pinned',pin);syncTone();
 }
 function syncTone(){job=0;if(!pin)return;const delta=topInset-track.getBoundingClientRect().top;
